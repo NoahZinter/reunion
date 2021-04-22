@@ -27,4 +27,14 @@ describe Activity do
       expect(activity.participants).to eq expected
     end
   end
+
+  describe '#total_cost' do
+    it 'adds the total money contributions of participants' do
+      activity = Activity.new("Brunch")
+      activity.add_participant('Maria', 20)
+      activity.add_participant("Luther", 40)
+
+      expect(activity.total_cost).to eq 60
+    end
+  end
 end

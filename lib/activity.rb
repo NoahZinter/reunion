@@ -10,5 +10,7 @@ class Activity
     @participants.update(name => money)
   end
 
-
+  def total_cost
+    @participants.values.sum
+  end
 end
