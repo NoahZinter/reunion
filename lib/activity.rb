@@ -6,5 +6,9 @@ class Activity
     @participants = {}
   end
 
+  def add_participant(name, money)
+    @participants.update(name => money)
+  end
+
 
 end

@@ -17,4 +17,14 @@ describe Activity do
       expect(activity.participants).to eq ({})
     end
   end
+
+  describe '#add_participant' do
+    it 'adds participants to hash with name as key and money as value' do
+      activity = Activity.new("Brunch")
+      activity.add_participant('Maria', 20)
+
+      expected = {'Maria' => 20}
+      expect(activity.participants).to eq expected
+    end
+  end
 end
