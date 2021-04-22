@@ -11,5 +11,10 @@ describe Activity do
       activity = Activity.new("Brunch")
       expect(activity.name).to eq 'Brunch'
     end
+
+    it 'starts with an empty hash of participants' do
+      activity = Activity.new("Brunch")
+      expect(activity.participants).to eq ({})
+    end
   end
 end
