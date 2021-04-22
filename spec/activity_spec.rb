@@ -47,4 +47,14 @@ describe Activity do
       expect(activity.split).to eq 30
     end
   end
+
+  describe '#owed' do
+    it 'returns a hash of what each participant owes or is owed' do
+      activity = Activity.new("Brunch")
+      activity.add_participant('Maria', 20)
+      activity.add_participant("Luther", 40)
+
+      expect(activity.owed).to eq({'Maria' => 10, 'Luther' => -10})
+    end
+  end
 end

@@ -17,4 +17,13 @@ class Activity
   def split
     total_cost / @participants.keys.length
   end
+
+  def owed
+    split = self.split
+    @participants.map do |name, money|
+      @participants[name] = (split - money)
+    end
+
+    @participants
+  end
 end
